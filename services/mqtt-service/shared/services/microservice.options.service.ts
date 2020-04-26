@@ -22,11 +22,7 @@ export const RMQMicroserviceOption = {
   name: 'RMQ_SERVICE',
   transport: Transport.RMQ,
   options: {
-    urls: ['amqp://127.0.0.1:5672'],
-    queue: 'product_queue',
-    queueOptions: {
-      durable: false
-    },
+    urls: [`amqp://rabbitmq:5672`],
   },
 };
 

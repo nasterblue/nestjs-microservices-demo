@@ -4,7 +4,7 @@ export const RedisMicroserviceOption = {
   name: 'REDIS_SERVICE',
   transport: Transport.REDIS,
   options: {
-    url: 'redis://127.0.0.1:6379',
+    url: 'redis://redis:6379',
   },
 };
 
@@ -22,11 +22,7 @@ export const RMQMicroserviceOption = {
   name: 'RMQ_SERVICE',
   transport: Transport.RMQ,
   options: {
-    urls: ['amqp://127.0.0.1:5672'],
-    queue: 'product_queue',
-    queueOptions: {
-      durable: false
-    },
+    urls: [`amqp://rabbitmq:5672`],
   },
 };
 
@@ -35,7 +31,7 @@ export const KAFKAMicroserviceOption = {
   transport: Transport.KAFKA,
   options: {
     client: {
-      brokers: ['127.0.0.1:9092'],
+      brokers: ['localhost:9092'],
     }
   },
 };

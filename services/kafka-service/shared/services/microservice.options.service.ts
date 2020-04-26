@@ -35,7 +35,7 @@ export const KAFKAMicroserviceOption = {
   transport: Transport.KAFKA,
   options: {
     client: {
-      brokers: ['127.0.0.1:9092'],
+      brokers: ['localhost:9092'],
     }
   },
 };

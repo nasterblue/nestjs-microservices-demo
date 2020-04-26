@@ -1,6 +1,6 @@
 import {Controller, Get} from '@nestjs/common';
 import {ClientProxy, ClientProxyFactory} from '@nestjs/microservices';
-import {EventPatternEnum, nasterblueUser, KAFKAMicroserviceOption} from '../../shared';
+import {EventPatternEnum, nasterbluePayment, KAFKAMicroserviceOption} from '../../shared';
 import {Observable} from 'rxjs';
 
 @Controller('kafka')
@@ -13,7 +13,7 @@ export class KafkaController {
 
   @Get()
   createUser(): Observable<any> {
-    const payload = nasterblueUser;
+    const payload = nasterbluePayment;
     return this.client.send({
       cmd: EventPatternEnum.CREATE_PAYMENT
     }, payload);
@@ -22,7 +22,7 @@ export class KafkaController {
 
   @Get('/kafka')
   createUser2(): Observable<any> {
-    const payload = nasterblueUser;
+    const payload = nasterbluePayment;
     this.client.emit(EventPatternEnum.CREATE_PAYMENT, payload);
     return new Observable(subscriber => subscriber.next(payload));
   }

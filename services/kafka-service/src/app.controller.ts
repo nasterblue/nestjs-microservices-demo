@@ -1,5 +1,5 @@
 import {Controller} from '@nestjs/common';
-import {EventPattern, MessagePattern} from '@nestjs/microservices';
+import {EventPattern, MessagePattern, ClientKafka} from '@nestjs/microservices';
 import {EventPatternEnum, RedisMicroserviceOption} from '@nasterblue/shared';
 import {Observable, of} from 'rxjs';
 import {delay} from 'rxjs/operators';

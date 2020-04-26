@@ -1,0 +1,56 @@
+version: "3"
+services:
+
+  rabbitmq:
+    image: rabbitmq:3
+    ports:
+      - 5672
+    volumes:
+      - rabbitmq:/var/lib/rabbitmq
+
+#  redis:
+#    image: redis
+#    ports:
+#      - 6379
+#    volumes:
+#      - redis:/data
+
+#  kafka-service:
+#    image: node:12
+#    command: bash -c "yarn && yarn start:dev"
+#    volumes:
+#      - ./services/kafka-service:/app
+#    working_dir: /app
+
+#  mqtt-service:
+#    image: node:12
+#    command: bash -c "yarn && yarn start:dev"
+#    volumes:
+#      - ./services/mqtt-service:/app
+#    working_dir: /app
+
+#  redis-service:
+#    image: node:12
+#    command: bash -c "yarn && yarn start:dev"
+#    volumes:
+#      - ./services/redis-service:/app
+#    working_dir: /app
+
+  rabbitmq-service:
+    image: node:12
+    command: bash -c "yarn && yarn start:dev"
+    volumes:
+      - ./services/rabbitmq-service:/app
+    working_dir: /app
+
+
+  client:
+    image: node:12
+    command: bash -c "yarn && yarn start:dev"
+    volumes:
+      - ./client:/app
+    working_dir: /app
+
+volumes:
+  rabbitmq:
+  redis:

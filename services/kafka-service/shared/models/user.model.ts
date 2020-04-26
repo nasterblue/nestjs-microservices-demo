@@ -1,10 +1,8 @@
 export class UserModel {
-  email: string;
-  username: string;
-  linkedin: string;
+  [key: string]: any;
 
-  constructor(user: Partial<UserModel>) {
-    Object.assign(this, user);
+  constructor(data: Partial<UserModel>) {
+    Object.assign(this, data);
   }
 }
 
